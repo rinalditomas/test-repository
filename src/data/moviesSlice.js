@@ -2,8 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchMovies = createAsyncThunk("fetch-movies", async (apiUrl) => {
   const response = await fetch(apiUrl);
-  const data = await response.json();
-  return data;
+  return await response.json();
 });
 
 const moviesSlice = createSlice({
@@ -24,7 +23,6 @@ const moviesSlice = createSlice({
         results: [],
         total_pages: 0,
         total_results: 0,
-        
       };
       state.fetchStatus = "";
     },

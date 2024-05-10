@@ -5,6 +5,7 @@ import Movie from './Movie'
 import '../styles/starred.scss'
 
   const watchLater = useSelector((state) => state.watchLater);
+  const { removeAllWatchLater } = watchLaterSlice.actions;
 
   return (
     <div className="starred" data-testid="watch-later-div">
@@ -21,7 +22,7 @@ import '../styles/starred.scss'
         </div>
 
         <footer className="text-center">
-          <button className="btn btn-primary" onClick={() => dispatch(remveAllWatchLater())}>Empty list</button>
+              onClick={() => dispatch(removeAllWatchLater())}
         </footer>
       </div>)}
 

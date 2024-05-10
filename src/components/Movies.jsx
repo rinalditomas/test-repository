@@ -1,7 +1,10 @@
 import Movie from './Movie'
 import '../styles/movies.scss'
 
-const Movies = ({ movies, viewTrailer, closeCard }) => {
+const Movies = ({
+  movies,
+  viewTrailer,
+}) => {
 
     return (
     <div data-testid="movies" className="movies-grid">
@@ -11,7 +14,6 @@ const Movies = ({ movies, viewTrailer, closeCard }) => {
                         movie={movie} 
                         key={movie.id}
                         viewTrailer={viewTrailer}
-                        closeCard={closeCard}
                     />
                 )
             })}

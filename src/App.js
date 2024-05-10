@@ -44,7 +44,6 @@ const App = () => {
   const viewTrailer = (movie) => {
     getMovie(movie.id);
     if (!videoKey) setOpen(true);
-    setOpen(true);
   };
 
   const getMovie = async (id) => {
@@ -77,12 +76,7 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={
-              <Movies
-                movies={movies}
-                viewTrailer={viewTrailer}
-              />
-            }
+            element={<Movies movies={movies} viewTrailer={viewTrailer} />}
           />
           <Route
             path="/starred"

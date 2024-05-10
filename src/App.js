@@ -65,36 +65,6 @@ const App = () => {
     }
   };
 
-  const observer = useRef();
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "20px",
-      threshold: 1.0,
-    };
-
-    observer.current = new IntersectionObserver(handleObserver, options);
-
-    return () => {
-      observer.current.disconnect();
-    };
-    // eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
-    if (movies.movies.results && movies.movies.results.length > 0) {
-      observer.current.observe(document.getElementById("observe-end"));
-    }
-  }, [movies]);
-
-  const handleObserver = (entities) => {
-    const target = entities[0];
-
-    if (target.isIntersecting) {
-      dispatch(moviesSlice.actions.incrementPage());
-    }
-  };
   return (
     <div className="App">
       <Header

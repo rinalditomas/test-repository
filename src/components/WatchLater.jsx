@@ -4,12 +4,7 @@ import watchLaterSlice from '../data/watchLaterSlice'
 import Movie from './Movie'
 import '../styles/starred.scss'
 
-const WatchLater = ({viewTrailer}) => {
-
-    const state = useSelector((state) => state)
-    const { watchLater } = state
-    const { remveAllWatchLater } = watchLaterSlice.actions
-    const dispatch = useDispatch()
+  const watchLater = useSelector((state) => state.watchLater);
 
   return (
     <div className="starred" data-testid="watch-later-div">

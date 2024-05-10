@@ -4,12 +4,7 @@ import starredSlice from '../data/starredSlice'
 import Movie from './Movie'
 import '../styles/starred.scss'
 
-const Starred = ({viewTrailer}) => {
-
-    const state = useSelector((state) => state)
-    const { starred } = state
-    const { clearAllStarred } = starredSlice.actions
-    const dispatch = useDispatch()
+  const starred = useSelector((state) => state.starred);
 
   return (
     <div className="starred" data-testid="starred">

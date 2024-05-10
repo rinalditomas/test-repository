@@ -18,6 +18,8 @@ import YouTubePlayer from "./components/YoutubePlayer";
 import "./app.scss";
 import { UseMovieSearch } from "./hooks/UseMovieSearch";
 import Modal from "./components/Modal";
+import { useInfiniteScroll } from "./hooks/useInfiniteScroll";
+import { getSearchResults, handleObserver } from "./helpers/movieHelpers";
 
 const App = () => {
   const movies = useSelector((state) => state.movies);
@@ -29,20 +31,14 @@ const App = () => {
   const navigate = useNavigate();
 
   UseMovieSearch(searchQuery, movies.movies.page);
-  const closeModal = () => setOpen(false);
+  useInfiniteScroll("observe-end", handleObserver, dispatch, [movies]);
 
-  const getSearchResults = (query) => {
-    if (query !== "") {
-      setSearchParams(createSearchParams({ search: query }));
-    } else {
-      setSearchParams();
-    }
-  };
+  const closeModal = () => setOpen(false);
 
   const searchMovies = (query) => {
     dispatch(moviesSlice.actions.resetPage());
     navigate("/");
-    getSearchResults(query);
+    getSearchResults(query, setSearchParams);
   };
 
   const viewTrailer = (movie) => {

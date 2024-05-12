@@ -5,9 +5,7 @@ import Movie from './Movie'
 import '../styles/starred.scss'
 
 const WatchLater = ({viewTrailer}) => {
-
-    const state = useSelector((state) => state)
-    const { watchLater } = state
+    const watchLater = useSelector((state) => state.watchLater);
     const { remveAllWatchLater } = watchLaterSlice.actions
     const dispatch = useDispatch()
 

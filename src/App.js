@@ -41,11 +41,10 @@ const App = () => {
     getSearchResults(query, setSearchParams);
   };
 
-  const viewTrailer = (movie) => {
-    getMovie(movie.id);
-    if (!videoKey) setOpen(true);
+  const viewTrailer = async (movie) => {
+    await getMovie(movie.id);
+    if (videoKey) setOpen(true);
   };
-
   const getMovie = async (id) => {
     const URL = `${ENDPOINT}/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
 

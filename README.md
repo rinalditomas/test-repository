@@ -4,6 +4,19 @@ React + Redux + RTK + Bootstrap application that fetches movies from [https://ww
 
 Created with [Create React App](https://github.com/facebook/create-react-app).
 
+
+### Create an .env file
+
+Before running the project make sure you create an .env file in the root of the project with the following variables:
+```
+REACT_APP_API_KEY=KEY
+REACT_APP_API_URL=URL
+```
+
+*Note: make sure to replace `KEY` and `URL` with your own variables
+
+Install all dependencies
+
 ## Available Scripts
 
 In the project directory, you can run:

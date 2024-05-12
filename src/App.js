@@ -23,9 +23,6 @@ const App = () => {
   
   const closeModal = () => setOpen(false)
   
-  const closeCard = () => {
-
-  }
 
   const getSearchResults = (query) => {
     if (query !== '') {

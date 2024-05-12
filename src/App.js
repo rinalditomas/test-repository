@@ -21,7 +21,6 @@ const App = () => {
   const [isOpen, setOpen] = useState(false)
   const navigate = useNavigate()
   
-  const closeModal = () => setOpen(false)
   
 
   const getSearchResults = (query) => {

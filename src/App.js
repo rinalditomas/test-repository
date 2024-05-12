@@ -13,8 +13,7 @@ import './app.scss'
 
 const App = () => {
 
-  const state = useSelector((state) => state)
-  const { movies } = state  
+  const movies = useSelector((state) => state.movies);
   const dispatch = useDispatch()
   const [searchParams, setSearchParams] = useSearchParams()
   const searchQuery = searchParams.get('search')

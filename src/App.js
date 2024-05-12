@@ -42,21 +42,25 @@ const App = () => {
   };
 
   const viewTrailer = async (movie) => {
-    await getMovie(movie.id);
+    const videoKey = await getMovie(movie.id);
     if (videoKey) setOpen(true);
   };
+
   const getMovie = async (id) => {
     const URL = `${ENDPOINT}/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
 
     setVideoKey(null);
     const videoData = await fetch(URL).then((response) => response.json());
 
+    let newVideoKey = null;
     if (videoData.videos && videoData.videos.results.length) {
       const trailer = videoData.videos.results.find(
         (vid) => vid.type === "Trailer"
       );
-      setVideoKey(trailer ? trailer.key : videoData.videos.results[0].key);
+      newVideoKey = trailer ? trailer.key : videoData.videos.results[0].key;
+      setVideoKey(newVideoKey);
     }
+    return newVideoKey;
   };
 
   return (

@@ -5,7 +5,7 @@ import '../styles/header.scss'
 
 const Header = ({ searchMovies }) => {
   
-  const { starredMovies } = useSelector((state) => state.starred)
+  const  starredMovies  = useSelector((state) => state.starred.starredMovies)
 
   return (
     <header>

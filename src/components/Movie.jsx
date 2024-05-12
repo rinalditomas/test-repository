@@ -30,13 +30,7 @@ const Movie = ({ movie, viewTrailer }) => {
                     <div className="year">{movie.release_date?.substring(0, 4)}</div>
                     {!starred.starredMovies.map(movie => movie.id).includes(movie.id) ? (
                         <span className="btn-star" data-testid="starred-link" onClick={() => 
-                            dispatch(starMovie({
-                                id: movie.id, 
-                                overview: movie.overview, 
-                                release_date: movie.release_date?.substring(0, 4),
-                                poster_path: movie.poster_path,
-                                title: movie.title
-                            })
+                            dispatch(starMovie(movie)
                         )}>
                             <i className="bi bi-star" />
                         </span>

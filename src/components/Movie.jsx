@@ -92,7 +92,7 @@ const Movie = ({ movie, viewTrailer }) => {
             <button
               type="button"
               className="btn btn-dark"
-              onClick={() => viewTrailer(movie)}
+              onClick={async () => await viewTrailer(movie)}
             >
               View Trailer
             </button>

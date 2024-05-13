@@ -69,6 +69,7 @@ const App = () => {
         searchMovies={searchMovies}
         searchParams={searchParams}
         setSearchParams={setSearchParams}
+        searchQuery={searchQuery}
       />
 
       <div className="container">

@@ -31,6 +31,7 @@ export const useInfiniteScroll = (
   useEffect(() => {
     const element = document.getElementById(elementId); // Get the element to observe
     if (element) {
+      observer.current.disconnect(); // Disconnect the observer from any elements it's currently observing
       observer.current.observe(element); // Start observing the element
     }
   }, dependencies);

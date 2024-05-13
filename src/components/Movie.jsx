@@ -11,6 +11,7 @@ const Movie = ({ movie, viewTrailer }) => {
 
   const dispatch = useDispatch();
 
+
   const myClickHandler = (e) => {
     e.stopPropagation();
     if (e.target.parentElement && e.target.parentElement.parentElement) {
@@ -123,3 +124,4 @@ const Movie = ({ movie, viewTrailer }) => {
 };
 
 export default Movie;
+
